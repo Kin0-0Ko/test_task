@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from 'react'
-import { useAppSelector } from '../hooks'
+import { useAppDispatch } from '../hooks'
 import { NavLink } from "react-router-dom";
+import { fetchProducts } from '../store/slieces/ProductSlice';
+import { searchCliean } from '../store/slieces/ProductSlice';
 
 interface PaginationPorps {
 	pagesQuan: number
@@ -8,9 +10,15 @@ interface PaginationPorps {
 }
 
 const Pagination: FC<PaginationPorps> = ({ pagesQuan, curPage }) => {
-	const { products } = useAppSelector(state => state.products)
 	const [pages, setPages] = useState<number[]>([])
-	const [page, setPage] = useState(parseInt(curPage) || 1)
+	const dispatch = useAppDispatch()
+
+
+	useEffect(() => {
+		dispatch(fetchProducts(parseInt(curPage)))
+		dispatch(searchCliean())
+
+	}, [curPage, dispatch])
 
 	useEffect(() => {
 		let arr = []
@@ -19,7 +27,8 @@ const Pagination: FC<PaginationPorps> = ({ pagesQuan, curPage }) => {
 		}
 		setPages(arr)
 
-	}, [products])
+
+	}, [pagesQuan])
 
 	let arrowsHandler = (dir: boolean) => {
 		let res = 0
@@ -30,12 +39,9 @@ const Pagination: FC<PaginationPorps> = ({ pagesQuan, curPage }) => {
 	return (
 		<div style={{ display: "flex", justifyContent: "space-between", width: "500px" }}>
 			<NavLink to={`/${arrowsHandler(true)}`}>&laquo;</NavLink>
-			
-			{pages.map(el => 
-			<NavLink key={el} to={`/${el}`}>{el}</NavLink>
-			)}
 
-
+			{pages.map(el =>
+				<NavLink key={el} to={`/${el}`}>{el}</NavLink>)}
 			<NavLink to={`/${arrowsHandler(false)}`}>&raquo;</NavLink>
 
 		</div>

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ProductList Snapshot product list component 1`] = `
+<DocumentFragment>
+  1cerulean2000
+</DocumentFragment>
+`;
+
+exports[`Test ProductList Snapshot product list component with empty props 1`] = `<DocumentFragment />`;
+
+exports[`Test ProductList Snapshot product list component with props 1`] = `
+<DocumentFragment>
+  1cerulean2000
+</DocumentFragment>
+`;

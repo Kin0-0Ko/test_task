@@ -8,17 +8,16 @@ interface ModalProps {
 
 const Modal: FC<ModalProps> = ({product}) => {
 	const [active, setActive] = useState(false)
-	console.log(active, product);
 	useEffect(() => {
-
 		product ? setActive(true) : setActive(false)
-		
+
 	}, [product])
 	
   return (
-	<div className={active ? `modal active` : 'modal'} onClick={() => setActive(false)}>
-		<div className={`modal_content`} onClick={(e) => e.stopPropagation()}>
-			{ product?.name}
+	<div className={active ? `modal active` : 'modal'} onClick={() => {setActive(false)}}>
+		<div className={`modal_content`} style={{backgroundColor: product?.color}} onClick={(e) => e.stopPropagation()}>
+				<h2>{product?.name}</h2>
+				<span>{product?.year}</span>
 		</div>
 	</div>
   )

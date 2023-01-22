@@ -36,9 +36,13 @@ code {
 
 .modal_content{
 	width: 500px;
-	height: 400px;
+	height: 300px;
 	background-color: #fff;
 	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
 }
 
 .active{
