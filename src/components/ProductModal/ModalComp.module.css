@@ -1,22 +1,3 @@
-body {
-  margin: 0 ;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.App{
-	height: 100vh;
-	width: 100vw;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .modal{
 	z-index: 9;
 	height: 100vh;
@@ -34,7 +15,7 @@ code {
 
 }
 
-.modal_content{
+.modalContent{
 	width: 500px;
 	height: 300px;
 	background-color: #fff;

@@ -82,7 +82,7 @@ const ProductsSlice = createSlice({
 			state.error = action.payload
 
 		},
-		searchCliean(state){
+		searchClean(state){
 			state.searched = []
 		}
 	},
@@ -130,5 +130,5 @@ const ProductsSlice = createSlice({
 	}
 
 })
-export const {searchCliean} = ProductsSlice.actions
+export const {searchClean} = ProductsSlice.actions
 export default ProductsSlice.reducer;

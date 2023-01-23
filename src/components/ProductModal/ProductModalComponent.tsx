@@ -1,9 +1,11 @@
 import React, { FC, useEffect, useState } from 'react'
-import { Product } from '../store/slieces/ProductSlice'
+import { Product } from '../../store/slieces/ProductSlice'
+import style from'./ModalComp.module.css'
 
 interface ModalProps {
 	product: Product | undefined
 }
+
 
 
 const Modal: FC<ModalProps> = ({product}) => {
@@ -14,8 +16,8 @@ const Modal: FC<ModalProps> = ({product}) => {
 	}, [product])
 	
   return (
-	<div className={active ? `modal active` : 'modal'} onClick={() => {setActive(false)}}>
-		<div className={`modal_content`} style={{backgroundColor: product?.color}} onClick={(e) => e.stopPropagation()}>
+	<div className={active ? `${style.modal} ${style.active}` : style.modal} onClick={() => {setActive(false)}}>
+		<div className={style.modalContent} style={{backgroundColor: product?.color}} onClick={(e) => e.stopPropagation()}>
 				<h2>{product?.name}</h2>
 				<span>{product?.year}</span>
 		</div>

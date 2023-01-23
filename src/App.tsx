@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import './App.css';
-import ProductBlock from './pages/ProductsPage';
+import ProductBlock from './pages/ProductPage/ProductsPage';
 import { useAppDispatch} from './hooks'
 import { fetchProducts } from './store/slieces/ProductSlice'
 import {createBrowserRouter,RouterProvider} from "react-router-dom";

@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from 'react'
-import { useAppDispatch } from '../hooks'
+import { useAppDispatch } from '../../hooks'
 import { NavLink } from "react-router-dom";
-import { fetchProducts } from '../store/slieces/ProductSlice';
-import { searchCliean } from '../store/slieces/ProductSlice';
-
+import { fetchProducts } from '../../store/slieces/ProductSlice';
+import { searchClean } from '../../store/slieces/ProductSlice';
+import style from "./Pagination.module.css"
 interface PaginationPorps {
 	pagesQuan: number
 	curPage: string
@@ -16,7 +16,7 @@ const Pagination: FC<PaginationPorps> = ({ pagesQuan, curPage }) => {
 
 	useEffect(() => {
 		dispatch(fetchProducts(parseInt(curPage)))
-		dispatch(searchCliean())
+		dispatch(searchClean())
 
 	}, [curPage, dispatch])
 
@@ -37,7 +37,7 @@ const Pagination: FC<PaginationPorps> = ({ pagesQuan, curPage }) => {
 	}
 
 	return (
-		<div style={{ display: "flex", justifyContent: "space-between", width: "500px" }}>
+		<div className={style.pagination}>
 			<NavLink to={`/${arrowsHandler(true)}`}>&laquo;</NavLink>
 
 			{pages.map(el =>

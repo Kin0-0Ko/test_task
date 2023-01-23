@@ -18,9 +18,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+	"files": ["./node_modules/wmr/types.d.ts"],
+    "jsx": "react-jsx" 
   },
   "include": [
     "src"
-  ]
+  ],
+
 }

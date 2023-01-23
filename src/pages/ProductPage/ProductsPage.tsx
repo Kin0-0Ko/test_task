@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useAppSelector } from '../hooks'
-import Pagination from '../components/PaginationComponent';
-import ProductList from '../components/ProductListComponent'
+import { useAppSelector } from '../../hooks'
+import Pagination from '../../components/PaginationComp/PaginationComponent';
+import ProductList from '../../components/ProductListComponent'
 import { useParams  } from "react-router-dom";
-import Search from '../components/SearchComponent';
-import { Product } from '../store/slieces/ProductSlice';
-import Modal from '../components/ProductModalComponent';
-
+import Search from '../../components/SearchComponent';
+import { Product } from '../../store/slieces/ProductSlice';
+import Modal from '../../components/ProductModal/ProductModalComponent';
+import style from "./ProductPage.module.css"
 
 
 function ProductBlock() {
@@ -33,10 +33,10 @@ function ProductBlock() {
 
   return (<>
 	<Modal product={activeProduct}/>
-	<div style={{ display: 'flex', alignItems: 'center',  flexDirection: 'column'}}>
+	<div className={style.prdPageContainer}>
 		<Search/>
-		<div style={{ display: 'flex', justifyContent: 'center'}}>
-			<table style={{ width: '600px', height: '300px'}}>
+		<div className={style.tableContainer}>
+			<table className={style.table}>
 				<thead>
 				<tr>
 					<th>Id</th>
